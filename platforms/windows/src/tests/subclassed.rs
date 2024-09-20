@@ -84,8 +84,8 @@ impl ActivationHandler for SimpleActivationHandler {
 
 struct TestApplication;
 
-impl ApplicationHandler<()> for TestApplication {
-    fn window_event(&mut self, _: &ActiveEventLoop, _: WindowId, _: WindowEvent) {}
+impl ApplicationHandler for TestApplication {
+    fn window_event(&mut self, _: &dyn ActiveEventLoop, _: WindowId, _: WindowEvent) {}
 
     fn resumed(&mut self, event_loop: &ActiveEventLoop) {
         let window_attributes = Window::default_attributes()

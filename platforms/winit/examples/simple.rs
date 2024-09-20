@@ -176,8 +176,8 @@ impl Application {
     }
 }
 
-impl ApplicationHandler<AccessKitEvent> for Application {
-    fn window_event(&mut self, _: &ActiveEventLoop, _: WindowId, event: WindowEvent) {
+impl ApplicationHandler for Application {
+    fn window_event(&mut self, _: &dyn ActiveEventLoop, _: WindowId, event: WindowEvent) {
         let window = match &mut self.window {
             Some(window) => window,
             None => return,
@@ -226,7 +226,7 @@ impl ApplicationHandler<AccessKitEvent> for Application {
         }
     }
 
-    fn user_event(&mut self, _: &ActiveEventLoop, user_event: AccessKitEvent) {
+    fn user_event(&mut self, _: &dyn ActiveEventLoop, user_event: AccessKitEvent) {
         let window = match &mut self.window {
             Some(window) => window,
             None => return,
