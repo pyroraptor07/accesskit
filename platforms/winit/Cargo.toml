@@ -22,7 +22,7 @@ tokio = ["accesskit_unix/tokio"]
 
 [dependencies]
 accesskit = { version = "0.16.0", path = "../../common" }
-winit = { git = "https://github.com/pop-os/winit.git", tag = "iced-xdg-surface-0.13" }
+winit = { git = "https://github.com/pop-os/winit.git", tag = "iced-xdg-surface-0.13-rc" }
 rwh_05 = { package = "raw-window-handle", version = "0.5", features = [
     "std",
 ], optional = true }
@@ -41,6 +41,6 @@ accesskit_unix = { version = "0.12.0", path = "../unix", optional = true, defaul
 
 [dev-dependencies.winit]
 git = "https://github.com/pop-os/winit.git"
-tag = "iced-xdg-surface-0.13"
+tag = "iced-xdg-surface-0.13-rc"
 default-features = false
 features = ["x11", "wayland", "wayland-dlopen", "wayland-csd-adwaita"]
